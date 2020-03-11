@@ -12,7 +12,6 @@ const SearchScreen = () => {
       return results.filter((result) => result.price === price)
     }
 
-    console.log(results)
     return (
       <View>
         <SearchBar 
