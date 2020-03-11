@@ -9,7 +9,10 @@ const ResultsList = ({ title, results }) => {
         horizontal
         data={results}
         keyExtractor={(result) => result.id}
-        renderItem={({ item }) => <ResultsDeatail result={item} />}
+        renderItem={({ item }) => (
+          <ResultsDeatail result={item} />
+        )}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   )
