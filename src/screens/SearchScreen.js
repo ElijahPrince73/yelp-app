@@ -20,7 +20,7 @@ const SearchScreen = () => {
           onTermSubmit={() => searchApi(term)}
         />
         {errorMessage ? <Text>{errorMessage}</Text> : null}
-        <Text>We have found {results.length}</Text>
+        <Text style={styles.count}>We have found {results.length}</Text>
         <ResultsList results={filterResultsByPrice("$")} title="Cost Effective" />
         <ResultsList results={filterResultsByPrice("$$")} title="Bit Pricier" />
         <ResultsList results={filterResultsByPrice("$$$")} title="Big Spender" />
@@ -29,7 +29,10 @@ const SearchScreen = () => {
 }
 
 const styles = StyleSheet.create({
-
+  count: {
+    marginLeft: 15,
+    marginVertical: 5
+  }
 })
 
 export default SearchScreen
