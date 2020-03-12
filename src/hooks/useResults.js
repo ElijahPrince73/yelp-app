@@ -5,12 +5,12 @@ export default () => {
   const [results, setResults] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
-  const searchApi = async (searchTerm) => {
+  const searchApi = async (term) => {
     try {
       const res = await yelp.get('/search', {
       params: {
         limit: 50,
-        searchTerm,
+        term,
         location: 'las vegas'
       }
     })
@@ -21,7 +21,7 @@ export default () => {
   }
 
   useEffect(() => {
-    searchApi('pasta')
+    searchApi('healthy')
   }, [])
 
   return [searchApi, results, errorMessage]
